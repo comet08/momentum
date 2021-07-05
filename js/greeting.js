@@ -12,7 +12,7 @@ function onLoginSubmit(event){
 }
 
 function login(username){
-    greeting.innerText = `Welcome ${username} !`;
+    greeting.innerText = `* ${username}'s ToDoList *`;
     greeting.classList.remove("hidden");
 }
 

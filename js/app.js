@@ -25,18 +25,18 @@ class App{
 
     resize(){
         this.stageWidth = document.body.clientWidth/2.5;
-        this.stageHeight = document.body.clientHeight/1.5;
+        this.stageHeight = document.body.clientHeight/1.4;
 
-        this.canvas.width = this.stageWidth * this.pixelRatio;
-        this.canvas.height = this.stageHeight * this.pixelRatio;
+        this.canvas.width = this.stageWidth;
+        this.canvas.height = this.stageHeight;
         this.ctx.scale(this.pixelRatio, this.pixelRatio);
 
         this.polygon = new Polygon(
-            this.stageWidth/2,
-            this.stageHeight/2,
-            this.stageWidth/2.5,
+            this.stageWidth/4,
+            this.stageHeight/4,
+            this.stageWidth/6,
             12,
-            this.stageWidth/9
+            this.stageWidth/12
         )
     }
 
@@ -55,11 +55,14 @@ class App{
         var pixel = this.ctx.getImageData(x, y, 1, 1);
         //console.log(pixel);
         var data = pixel.data;
+       // console.log(data)
         var rgba = 'rgba(' + data[0] + ', ' + data[1] +
           ', ' + data[2] + ', ' + (data[3] / 255) + ')';
         
+        if(rgba==='rgba(0, 0, 0, 0)')
+            rgba = 'rgba(0,0,0.1)'
         
-        console.log(rgba);
+        //console.log(rgba);
         document.body.style.backgroundColor = rgba;
     }
 
