@@ -7,22 +7,25 @@ body{
    margin : 0;
    width : 100%;
    height : 100%;
-   background-color: black;
+   background-color: white;
+   font-family: 'Nanum Gothic', sans-serif;
    
 }
 
 canvas{
-    position: absolute;
-    top : 10%;
-    left : 3%;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-input{
+input[type=text]{
     border-width: 0px;
     font-size: 25px;
     background-color: rgba(0,0,0,0);
     text-align: center;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+input[type=text]:focus{
+    outline: none;
 }
 
 button{
@@ -46,16 +49,47 @@ li{
     display: none;
 }
 
+#command-container{
+    position: absolute;
+    top : 13%;
+    width : 50%;
+    text-align: center;
+    
+
+}
+
+#commandForm{
+    background-color: black;
+    color : white;
+    display :inline-block;
+    height : 25px;
+    padding : 10px 10px 10px 10px;
+}
+
+#commandForm{
+    font-size: 20px;
+   
+}
+
+#commandForm input{
+    font-size: 18px;
+    text-align: left;
+    background-color: black;
+    color : white;
+}
+
 #todo-container{
     position: absolute;
     top : 13%;
     left : 50%;
     background-color: white;
     width : 40%;
-    height : 70%;
+    height : 100%;
     
     padding: 10px 10px 10px 10px;
-    border-radius: 2em;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+
     border : rgba(116, 98, 0, 0.1) 10px solid; 
 }
 
@@ -64,7 +98,6 @@ li{
 }
 
 #todo-form {
-    
     justify-content: center;
     text-align: center;
 }

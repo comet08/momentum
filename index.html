@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>MoMenTum</title>
 </head>
 <body>
     <h1 id="clock">00:00:00</h1>
-
+    <div id="command-container">
+        <form id="commandForm">
+            <span id="command">visitor@comet:~$</span>
+            <input type="text" placeholder="" required>
+            <input type="submit" value="submit" class="hidden">
+        </form>
+        <div id="command-res">
+            <canvas id="pallete" class="hidden"></canvas>
+            
+        </div>
+    </div>
     <div id="todo-container">
         <form class="hidden" id="loginForm" >
             <input type="text" placeholder="What's Your Name ?" required>
@@ -28,8 +41,13 @@
 
     <!-- Script -->
     <script src="js/greeting.js"></script>
-    <script src="js/todo.js"></script>
+    
     <script src="js/clock.js"></script>
+    <script src="js/command.js"></script>
+    <script src="js/background.js"></script>
+
+    <script src="js/todo.js"></script>
+
     <script type="module" src="js/app.js"></script>
     
 </body>

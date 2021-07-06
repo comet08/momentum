@@ -2,9 +2,8 @@ import { Polygon } from "./polygon.js";
 
 class App{
     constructor(){
-        this.canvas = document.createElement("canvas");
+        this.canvas = document.querySelector("#pallete");
         this.ctx = this.canvas.getContext("2d");
-        document.body.appendChild(this.canvas);
 
         this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
 
@@ -15,9 +14,9 @@ class App{
         this.moveX = 0;
         this.offsetX = 0;
 
-        document.addEventListener('pointerdown', this.onDown.bind(this), false);
-        document.addEventListener('pointermove', this.onMove.bind(this), false);
-        document.addEventListener('pointerup', this.onUp.bind(this), false);
+        this.canvas.addEventListener('pointerdown', this.onDown.bind(this), false);
+        this.canvas.addEventListener('pointermove', this.onMove.bind(this), false);
+        this.canvas.addEventListener('pointerup', this.onUp.bind(this), false);
 
         this.canvas.addEventListener("click", this.coloring.bind(this), false);
         window.requestAnimationFrame(this.animate.bind(this));
@@ -34,7 +33,7 @@ class App{
         this.polygon = new Polygon(
             this.stageWidth/4,
             this.stageHeight/4,
-            this.stageWidth/6,
+            this.stageWidth/8,
             12,
             this.stageWidth/12
         )
@@ -49,21 +48,19 @@ class App{
         this.polygon.animate(this.ctx, this.moveX);
     }
 
-    coloring(e){
+    coloring(event){
         var x = event.layerX;
         var y = event.layerY;
         var pixel = this.ctx.getImageData(x, y, 1, 1);
-        //console.log(pixel);
         var data = pixel.data;
-       // console.log(data)
         var rgba = 'rgba(' + data[0] + ', ' + data[1] +
           ', ' + data[2] + ', ' + (data[3] / 255) + ')';
         
         if(rgba==='rgba(0, 0, 0, 0)')
             rgba = 'rgba(0,0,0.1)'
         
-        //console.log(rgba);
         document.body.style.backgroundColor = rgba;
+        localStorage.setItem("bcolor", rgba);
     }
 
     onDown(e){

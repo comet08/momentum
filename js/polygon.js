@@ -12,7 +12,6 @@ const colors = [
   'slateblue',
   'skyblue',
   'mediumpurple'
-
 ];
 
 export class Polygon{

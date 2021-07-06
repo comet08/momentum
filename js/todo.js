@@ -26,7 +26,6 @@ function loadTodo(newTodo){
     button.addEventListener("click", deleteTodo);
     li.appendChild(span);
     li.appendChild(button);
-    console.log(li);
     todoList.appendChild(li);
 }
 
