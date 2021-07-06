@@ -1,21 +1,30 @@
 const commandForm = document.querySelector("#commandForm");
 const command_input = document.querySelector("#commandForm input");
-const command_res = document.querySelector("#command-res");
+const command_res = document.querySelector("#command_res");
 
 const pallete = document.querySelector("#pallete");
-const command_arr = [pallete];
+const music = document.querySelector("#music_container");
+
+const command_arr = [pallete, music];
+
 const command_list = ["pallete", "help", "music"]
 //
 
 //palleteR, palleteG, palleteB, help, music
 
-function handleCommand(){
-    const cinput = command_input.value;
+const hidden = "hidden";
 
+function clear(){
+    command_arr.map((obj)=>obj.classList.add(hidden));
+}
+
+function handleCommand(event){
+    event.preventDefault();
+    const cinput = command_input.value;
+    command_input.value = "";
     if(cinput === "clear"){
         localStorage.removeItem("command");
-       
-        command_arr.map((obj)=>obj.classList.add("hidden"));
+        clear();
     }
     else if(command_list.indexOf(cinput)>=0){
         localStorage.setItem("command", cinput);
@@ -27,8 +36,13 @@ function handleCommand(){
 }
 
 function executing(c){
+    window.console.log(c)
+    clear();
     if(c === "pallete"){
-        pallete.classList.remove("hidden");        
+        pallete.classList.remove(hidden);        
+    }
+    if(c === "music"){
+        music.classList.remove(hidden);
     }
     
 }

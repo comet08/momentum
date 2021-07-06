@@ -8,32 +8,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="#">
+
     <title>MoMenTum</title>
 </head>
 <body>
     <h1 id="clock">00:00:00</h1>
-    <div id="command-container">
+    <div id="command_container">
         <form id="commandForm">
             <span id="command">visitor@comet:~$</span>
             <input type="text" placeholder="" required>
             <input type="submit" value="submit" class="hidden">
         </form>
-        <div id="command-res">
+        <div id="command_res">
             <canvas id="pallete" class="hidden"></canvas>
-            
+            <div id="music_container" class="hidden">
+               <span id="music_prev" class="music_button">⏪</span>
+               <span id="music_play" class="music_button">💘</span>
+               <span id="music_next" class="music_button">⏩</span>
+            </div>
         </div>
     </div>
-    <div id="todo-container">
+    <div id="todo_container">
         <form class="hidden" id="loginForm" >
             <input type="text" placeholder="What's Your Name ?" required>
             <input type="submit" value="Login" class="hidden">
         </form>
         <h1 class="hidden" id="greeting">name</h1>
-        <form id="todo-form">
+        <form id="todo_form">
             <input type="text" placeholder="New To Do" required />
             <input type="submit" value="submit" class="hidden">
         </form>
-        <ul id="todo-list"></ul>
+        <ul id="todo_list"></ul>
     </div>
 
 
@@ -41,11 +47,10 @@
 
     <!-- Script -->
     <script src="js/greeting.js"></script>
-    
     <script src="js/clock.js"></script>
     <script src="js/command.js"></script>
     <script src="js/background.js"></script>
-
+    <script src="js/music.js"></script>
     <script src="js/todo.js"></script>
 
     <script type="module" src="js/app.js"></script>

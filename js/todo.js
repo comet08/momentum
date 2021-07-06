@@ -1,6 +1,6 @@
-const todoForm = document.querySelector("#todo-form");
-const todoInput = document.querySelector("#todo-form input")
-const todoList = document.querySelector("#todo-list");
+const todoForm = document.querySelector("#todo_form");
+const todoInput = document.querySelector("#todo_form input")
+const todoList = document.querySelector("#todo_list");
 
 
 let todos = [];
@@ -30,6 +30,7 @@ function loadTodo(newTodo){
 }
 
 function addTodo(event){
+
     event.preventDefault();
     const newTodo = todoInput.value;
     todoInput.value = "";
