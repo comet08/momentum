@@ -9,6 +9,7 @@ const music_list = ['media/lizzysvoice.mp3', 'media/paintonme.mp3', 'media/diffe
 let turn = 0, isPlaying=0;
 audio.loop = true;
 audio.src = music_list[turn];
+audio.volume = 0.2;
 
 function handling(){
     if(isPlaying){
