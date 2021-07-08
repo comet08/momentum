@@ -5,7 +5,7 @@ class App{
         this.canvas = document.querySelector("#pallete");
         this.ctx = this.canvas.getContext("2d");
 
-        this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
+        this.pixelRatio = window.devicePixelRatio;
 
         window.addEventListener('resize', this.resize.bind(this), false);
         this.resize();
@@ -23,19 +23,19 @@ class App{
     }
 
     resize(){
-        this.stageWidth = document.body.clientWidth/2.5;
-        this.stageHeight = document.body.clientHeight/1.4;
+        this.stageWidth = document.body.clientWidth;
+        this.stageHeight = document.body.clientHeight;
 
-        this.canvas.width = this.stageWidth;
-        this.canvas.height = this.stageHeight;
+        this.canvas.width = this.stageWidth/3* this.pixelRatio;
+        this.canvas.height = this.stageHeight/2* this.pixelRatio;
         this.ctx.scale(this.pixelRatio, this.pixelRatio);
 
         this.polygon = new Polygon(
-            this.stageWidth/4,
+            this.stageWidth/6,
             this.stageHeight/4,
-            this.stageWidth/8,
+            this.stageWidth/10,
             12,
-            this.stageWidth/12
+            this.stageWidth/17
         )
     }
 

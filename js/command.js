@@ -36,7 +36,6 @@ function handleCommand(event){
 }
 
 function executing(c){
-    window.console.log(c)
     clear();
     if(c === "pallete"){
         pallete.classList.remove(hidden);        
